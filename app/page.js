@@ -1,4 +1,5 @@
-'use client'
+'use client';
+
 import getStripe from '@/utils/get-stripe';
 import { AppBar, Toolbar, Typography, Button, Box, Grid, Container, Card, CardContent } from '@mui/material';
 import { SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
@@ -57,6 +58,7 @@ export default function Home() {
           </SignedIn>
         </Toolbar>
       </AppBar>
+
       <Box sx={{ textAlign: 'center', my: 4, color: '#333' }}>
         <Typography variant="h2" component="h1" gutterBottom sx={{ fontWeight: 'bold' }}>
           Welcome to RecallAI
@@ -65,11 +67,14 @@ export default function Home() {
           The quickest way to make flashcards!.
         </Typography>
         <Button variant="contained" sx={{ mt: 2, mr: 2, backgroundColor: '#BD38AC' }} href="/generate">
-  Get Started
-</Button>
+          Get Started
+        </Button>
       </Box>
+
       <Box sx={{ my: 6 }}>
-        <Typography variant="h4" component="h2" gutterBottom sx={{ fontWeight: 'bold', color: '#BD38AC', textAlign: 'center' }}>Features</Typography>
+        <Typography variant="h4" component="h2" gutterBottom sx={{ fontWeight: 'bold', color: '#BD38AC', textAlign: 'center' }}>
+          Features
+        </Typography>
         <Grid container spacing={4} justifyContent="center">
           <Grid item xs={12} md={4}>
             <Card sx={{ boxShadow: 3, borderRadius: 2, textAlign: 'center', transition: '0.3s', '&:hover': { transform: 'scale(1.05)' } }}>
@@ -103,8 +108,33 @@ export default function Home() {
           </Grid>
         </Grid>
       </Box>
+
+      {/* New Games Section */}
+      <Box sx={{ my: 6 }}>
+        <Typography variant="h4" component="h2" gutterBottom sx={{ fontWeight: 'bold', color: '#BD38AC', textAlign: 'center' }}>
+          Games
+        </Typography>
+        <Grid container spacing={4} justifyContent="center">
+          <Grid item xs={12} md={6}>
+            <Card sx={{ boxShadow: 3, borderRadius: 2, textAlign: 'center', transition: '0.3s', '&:hover': { transform: 'scale(1.05)' } }}>
+              <CardContent>
+                <Typography variant='h6' sx={{ fontWeight: 'bold' }}>Play Timer Game</Typography>
+                <Typography>
+                  Test your knowledge with our timed flashcard game!
+                </Typography>
+                <Button variant="contained" sx={{ mt: 2, backgroundColor: '#BD38AC' }} href="/timer-game">
+                  Play Now
+                </Button>
+              </CardContent>
+            </Card>
+          </Grid>
+        </Grid>
+      </Box>
+
       <Box sx={{ my: 6, textAlign: 'center' }}>
-        <Typography variant="h4" component="h2" gutterBottom sx={{ fontWeight: 'bold', color: '#BD38AC' }}>Pricing</Typography>
+        <Typography variant="h4" component="h2" gutterBottom sx={{ fontWeight: 'bold', color: '#BD38AC' }}>
+          Pricing
+        </Typography>
         <Grid container spacing={4}>
           <Grid item xs={12} md={6}>
             <Card 
@@ -129,8 +159,8 @@ export default function Home() {
                 Access to basic flashcard features with limited storage.
               </Typography>
               <Button variant="contained" sx={{ mt: 2, backgroundColor: '#BD38AC' }}>
-  Choose Basic
-</Button>
+                Choose Basic
+              </Button>
             </Card>
           </Grid>
           <Grid item xs={12} md={6}>
